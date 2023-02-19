@@ -34,14 +34,23 @@ def return_data():
     data = response.json()
     song_names = []
     artist_name = []
+    played_at = []
 
     # Save all info in lists
     for song in data["items"]:
         song_names.append(song["track"]["name"])
         artist_name.append(song["track"]["album"]["artists"][0]["name"])
+        played_at.append(song["played_at"])
 
     # Saving info as dicctionary
-    song_dict = {"song_name": song_names, "artist_name": artist_name}
+    song_dict = {
+        "song_name": song_names,
+        "artist_name": artist_name,
+        "played_at": played_at,
+    }
 
-    df = pd.DataFrame(song_dict, columns=["song_name", "artist_name"])
-    print(df)
+    spotify_df = pd.DataFrame(
+        song_dict, columns=["song_name", "artist_name", "played_at"]
+    )
+
+    return spotify_df
