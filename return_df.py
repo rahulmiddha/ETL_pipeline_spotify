@@ -45,6 +45,3 @@ def return_data():
 
     df = pd.DataFrame(song_dict, columns=["song_name", "artist_name"])
     print(df)
-
-
-return_data()
