@@ -11,6 +11,7 @@ def check_null(load_df):
 
 
 if __name__ == "__main__":
-    load_df = return_df.return_data()
+    # argument can be either tracks or artists
+    load_df = return_df.return_data("tracks")
     # print(load_df)
     check_null(load_df)

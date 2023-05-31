@@ -1,5 +1,7 @@
 # git ignore  file
-.venv/*
-config.*
-testing/*
-__pycache__/*
+.venv/
+.vscode/
+Scripts/config/
+testing/
+__pycache__/
+Scripts/__pycache__
